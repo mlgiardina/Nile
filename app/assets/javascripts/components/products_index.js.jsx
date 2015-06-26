@@ -2,9 +2,9 @@
 
 var ProductsIndex = React.createClass({
     getInitialState: function () {
-        return { page: 0, products: this.props.products }
+        return { page: 0, products: this.props.products };
     },
-    render () {
+    render: function () {
         return (
             <div className='row'>
                 <div className='col-sm-5 col-sm-offset-1'>
@@ -15,7 +15,6 @@ var ProductsIndex = React.createClass({
             </div>
         );
     },
-
     renderProducts () {
         var products = this.state.products;
         return products.map(function (product) {
