@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails Nile: development" uuid="637939b1-b984-4dbc-bfbd-532dfd9edacf">
+      <schema-pattern>Nile_development.*</schema-pattern>
+      <default-schemas>Nile_development.*</default-schemas>
+    </data-source>
+    <data-source name="Rails Nile: test" uuid="f2d770df-531e-4def-b39c-4fb8df5f0b1a">
+      <schema-pattern>Nile_test.*</schema-pattern>
+      <default-schemas>Nile_test.*</default-schemas>
+    </data-source>
+    <data-source name="Rails Nile: production" uuid="244d756e-f9ac-45eb-886f-5d93e6d8e964">
+      <first-sync>true</first-sync>
+      <user-name>Nile</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe4dfe3dfe6dfefdff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>
