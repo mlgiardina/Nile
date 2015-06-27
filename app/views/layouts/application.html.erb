@@ -7,7 +7,11 @@
 </head>
 <body>
     <header>
+      <% if session[:user_id] %>
         <%= react_component("LoggedInNavigation") %>
+      <% else %>
+        <%= react_component("LoggedOutNavigation") %>
+      <% end %>
     </header>
 
     <div class="container">
