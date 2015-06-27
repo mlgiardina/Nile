@@ -2,7 +2,9 @@
 @import 'bootstrap';
 @import 'normalize';
 //You need to now manually import every other scss file.
-
+.logo {
+  display: inline;
+}
 .form-search {
   display: inline-block;
   padding-left: 15px;
@@ -10,4 +12,14 @@
 
 .logout {
   float: right;
+}
+
+nav {
+  border-bottom: 1px solid gray;
+  background: lightcyan;
+}
+
+.notice {
+  background: lightyellow;
+  min-width: 20%;
 }

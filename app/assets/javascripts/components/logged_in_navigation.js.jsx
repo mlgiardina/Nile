@@ -12,7 +12,7 @@ var LoggedInNavigation = React.createClass({
 
 var Home = React.createClass({
     render: function () {
-        return (<span onClick={this.clicked} className='btn btn-default'>Nile</span>);
+        return (<h2 onClick={this.clicked} className='logo'>Nile</h2>);
     },
 
     clicked: function () {

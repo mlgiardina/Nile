@@ -4,14 +4,14 @@ var LoggedOutNavigation = React.createClass({
             <nav>
                 <Home url='/' />
                 <Search />
-                <SignUp url='/signup' />
-                <Login url='/login' />
+                <SignUpButton url='/users/new' />
+                <LoginButton url='/login' />
             </nav>
         );
     }
 });
 
-var Login = React.createClass({
+var LoginButton = React.createClass({
     render: function () {
         return (
             <span onClick={this.clicked} className='btn btn-default login'>Login</span>
@@ -22,7 +22,7 @@ var Login = React.createClass({
     }
 });
 
-var SignUp = React.createClass({
+var SignUpButton = React.createClass({
     render: function () {
         return (
             <span onClick={this.clicked} className='btn btn-default login'>Sign Up</span>

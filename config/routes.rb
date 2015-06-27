@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :orders
 
   get "/login" => "sessions#new", as: "login"
-  post "/logout" => "sessions#create", as: "logout"
-  get "/logout" => "sessions#logout"
+  post "/login" => "sessions#create"
+  get "/logout" => "sessions#destroy"
 
   root 'products#index'
 

@@ -15,7 +15,14 @@
     </header>
 
     <div class="container">
-<%= yield %>
+      <% if flash %>
+          <div class="notice">
+            <% flash.each do |k, v| %>
+                <%= v %>
+            <% end %>
+          </div>
+      <% end %>
+      <%= yield %>
     </div>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
