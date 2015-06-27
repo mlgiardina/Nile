@@ -18,16 +18,16 @@ var ProductsIndex = React.createClass({
     renderProducts () {
         var products = this.state.products;
         return products.map(function (product) {
-            return <Product id={product.id} url={product.url} name={product.name} description={product.description} image={product.image} />;
+            return <Product id={product.id} url={product.url} name={product.name} description={product.description} image={product.image} price={product.price} />;
         });
     },
     prev: function () {
-        jQuery.getJSON('/products?page=' + (this.state.page - 1), function (data) {
+        $.getJSON('/products?page=' + (this.state.page - 1), function (data) {
             this.setState({products: data, page: this.state.page - 1 });
         }.bind(this))
     },
     next: function () {
-        jQuery.getJSON('/products?page=' + (this.state.page + 1), function (data) {
+        $.getJSON('/products?page=' + (this.state.page + 1), function (data) {
             this.setState({products: data, page: this.state.page + 1});
         }.bind(this))
     }

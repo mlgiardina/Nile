@@ -6,6 +6,7 @@ var Product = React.createClass({
                 <p>
                     <img src={"http://placehold.it/100"} />
                     {this.props.description}
+                    <h3>Price</h3>: {this.props.price}
                 </p>
             </div>
         );
