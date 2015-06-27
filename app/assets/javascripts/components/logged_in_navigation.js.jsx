@@ -2,15 +2,15 @@ var LoggedInNavigation = React.createClass({
     render: function () {
         return (
             <nav>
-                <Home url '/' />
-                <Search />
-                <Logout name='Logout' url '/logout/' />
+                 <Home url='/' />
+                 <Search />
+                 <Logout url='/logout/' />
             </nav>
         );
     }
 });
 
-var NavLink = React.createClass({
+var Home = React.createClass({
     render: function () {
         return (<span onClick={this.clicked} className='btn btn-default'>Nile</span>);
     },
@@ -23,16 +23,14 @@ var NavLink = React.createClass({
 var Search = React.createClass({
     render: function () {
         return (
-            <div>
-                <form class='form-search' >
-                    <div class='input-append'>
-                    <input type='text' class='span2 search-query' />
-                        <button type='submit' class='btn'>
-                            <i class='icon-search'></i>
-                        </button>
-                    </div>
+            <span>
+                <form className='form-search' >
+                    <span className='input-append'>
+                    <input type='text' className='span2 search-query' />
+                        <button type='submit' className='btn btn-default'>Search</button>
+                    </span>
                 </form>
-            </div>
+            </span>
         );
     }
 });
@@ -40,7 +38,11 @@ var Search = React.createClass({
 var Logout = React.createClass({
     render: function () {
         return (
-            <span></span>
+            <span onClick={this.clicked} className='btn btn-default logout'>Logout</span>
         );
+    },
+
+    clicked: function () {
+        window.location.href = this.props.url;
     }
 });

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
     page = params.fetch(:page, 0).to_i
     per_page = params.fetch(:per_page, 15).to_i
