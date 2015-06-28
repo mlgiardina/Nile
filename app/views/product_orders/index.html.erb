@@ -1,0 +1,9 @@
+<h2 class="page-header">Shopping Cart</h2>
+<!--<%= react_component("ShoppingCart", {cartItems: @cart_items}) %>-->
+<% @cart_items.distinct.each do |item| %>
+    <li><%=link_to item.name, item %>
+    | Price: $<%= item.price %>
+    | Quantity: <%= ProductOrder.where(order_id: @cart.id).where(product_id: item.id).first.quantity %>
+    <%= button_to "Remove One", {action: 'update', id: ProductOrder.where(order_id: @cart.id).where(product_id: item.id).first.id, specify: "remove"},  method: 'put'  %>
+    <%= button_to "Add Another One", {action: 'update', id: ProductOrder.where(order_id: @cart.id).where(product_id: item.id).first.id, specify: "add"}, method: 'put'  %>
+<% end %>

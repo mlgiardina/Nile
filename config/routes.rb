@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :products
   resources :orders
+  resources :product_orders
 
   get "/login" => "sessions#new", as: "login"
   post "/login" => "sessions#create"

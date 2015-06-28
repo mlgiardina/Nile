@@ -26,15 +26,15 @@ ActiveRecord::Schema.define(version: 20150625231558) do
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "product_orders", force: :cascade do |t|
-    t.integer  "user_id",                null: false
     t.integer  "product_id",             null: false
+    t.integer  "order_id",               null: false
     t.integer  "quantity",   default: 0, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
 
+  add_index "product_orders", ["order_id"], name: "index_product_orders_on_order_id", using: :btree
   add_index "product_orders", ["product_id"], name: "index_product_orders_on_product_id", using: :btree
-  add_index "product_orders", ["user_id"], name: "index_product_orders_on_user_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name",                            null: false
@@ -56,6 +56,6 @@ ActiveRecord::Schema.define(version: 20150625231558) do
   end
 
   add_foreign_key "orders", "users"
+  add_foreign_key "product_orders", "orders"
   add_foreign_key "product_orders", "products"
-  add_foreign_key "product_orders", "users"
 end

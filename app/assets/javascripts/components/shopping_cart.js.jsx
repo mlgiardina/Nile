@@ -1,9 +1,17 @@
 var ShoppingCart = React.createClass({
+    getInitialState: function () {
+        return {cartItems: this.props.cartItems};
+    },
     render: function () {
-        return (
-            <div className='col-xs-2 shopping-cart'>
-                <h3 className='page-header'>Cart</h3>
-            </div>
-        );
+        return (<div className="shopping-cart">
+            {this.renderCart()}
+        </div>);
+    },
+
+    renderCart: function () {
+        var cartItems = this.state.cartItems;
+        return cartItems.map(function (item) {
+            return <Product name={item.name} price={item.price} />;
+        });
     }
 });

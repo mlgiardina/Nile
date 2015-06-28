@@ -4,6 +4,7 @@ var LoggedInNavigation = React.createClass({
             <nav>
                  <Home url='/' />
                  <Search />
+                 <Cart url='/product_orders' />
                  <Logout url='/logout/' />
             </nav>
         );
@@ -44,5 +45,17 @@ var Logout = React.createClass({
 
     clicked: function () {
         window.location.href = this.props.url;
+    }
+});
+
+var Cart = React.createClass({
+    render: function () {
+        return (
+            <span onClick={this.clicked} className = 'btn btn-default'>Cart</span>
+        );
+    },
+
+    clicked: function () {
+        window.location.href= this.props.url;
     }
 });

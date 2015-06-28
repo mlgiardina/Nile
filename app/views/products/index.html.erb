@@ -1,2 +1,7 @@
 <h2 class="page-header">Products</h2>
-<%= react_component("ProductsIndex", products: @products) %>
+<% if @cart %>
+    <%= react_component("ProductsIndex", products: @products, order_id: @cart.id) %>
+<% else %>
+    <%= react_component("ProductsIndex", products: @products) %>
+<% end %>
+

@@ -2,7 +2,7 @@
 
 var ProductsIndex = React.createClass({
     getInitialState: function () {
-        return { page: 0, products: this.props.products };
+        return { page: 0, products: this.props.products, order_id: this.props.order_id };
     },
     render: function () {
         return (
@@ -10,16 +10,16 @@ var ProductsIndex = React.createClass({
                 {this.navButtons()}
                 <div className='row'>
                     {this.renderProducts()}
-                    <ShoppingCart />
                 </div>
                 {this.navButtons()}
             </div>
         );
     },
     renderProducts () {
+        var self = this;
         var products = this.state.products;
         return products.map(function (product) {
-            return <Product id={product.id} url={product.url} name={product.name} description={product.description} image={product.image} price={product.price} />;
+            return <Product id={product.id} url={product.url} name={product.name} description={product.description} image={product.image} price={product.price} order_id={self.state.order_id} />;
         });
     },
     prev: function () {
