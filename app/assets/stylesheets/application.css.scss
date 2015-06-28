@@ -23,3 +23,19 @@ nav {
   background: lightyellow;
   min-width: 20%;
 }
+
+.in-cart {
+  background: red;
+}
+
+.shopping-cart {
+  background: blue;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  min-width: 300px;
+}
+
+.container {
+  position: relative;
+}

@@ -13,8 +13,11 @@
         <%= react_component("LoggedOutNavigation") %>
       <% end %>
     </header>
-
     <div class="container">
+
+
+
+
       <% if flash %>
           <div class="notice">
             <% flash.each do |k, v| %>
@@ -23,6 +26,7 @@
           </div>
       <% end %>
       <%= yield %>
+
     </div>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

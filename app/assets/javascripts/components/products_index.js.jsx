@@ -6,12 +6,13 @@ var ProductsIndex = React.createClass({
     },
     render: function () {
         return (
-            <div className='row'>
-                <div className='col-sm-5 col-sm-offset-1'>
+            <div>
+                {this.navButtons()}
+                <div className='row'>
                     {this.renderProducts()}
-                    <div onClick={this.prev} className='btn btn-default'>Prev Page</div>
-                    <div onClick={this.next} className='btn btn-default'>Next Page</div>
+                    <ShoppingCart />
                 </div>
+                {this.navButtons()}
             </div>
         );
     },
@@ -30,5 +31,13 @@ var ProductsIndex = React.createClass({
         $.getJSON('/products?page=' + (this.state.page + 1), function (data) {
             this.setState({products: data, page: this.state.page + 1});
         }.bind(this))
+    },
+    navButtons: function () {
+        return (
+            <div className='row-offset'>
+                <div onClick={this.prev} className='btn btn-default'>Prev Page</div>
+                <div onClick={this.next} className='btn btn-default'>Next Page</div>
+            </div>
+        );
     }
 });
