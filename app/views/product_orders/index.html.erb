@@ -7,3 +7,4 @@
     <%= button_to "Remove One", {action: 'update', id: ProductOrder.where(order_id: @cart.id).where(product_id: item.id).first.id, specify: "remove"},  method: 'put'  %>
     <%= button_to "Add Another One", {action: 'update', id: ProductOrder.where(order_id: @cart.id).where(product_id: item.id).first.id, specify: "add"}, method: 'put'  %>
 <% end %>
+<%= button_to "Submit Order", {controller: 'orders', action: 'update', id: @cart.id, completed: true}, method: 'put' %>

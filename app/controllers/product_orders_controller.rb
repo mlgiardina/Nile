@@ -4,22 +4,19 @@ class ProductOrdersController < ApplicationController
   end
 
   def create
+    authenticate_user!
     ProductOrder.create(order_id: params[:order_id], product_id: params[:product_id], quantity: params[:quantity])
     redirect_to '/'
   end
 
   def index
+    authenticate_user!
     @cart_items = User.find(session[:user_id]).orders.where(completed:false).first.products
     @cart = cart
   end
 
-  def destroy
-    authenticate_user!
-    ProductOrder.delete(ProductOrder.where(order_id: User.find(session[:user_id]).orders.where(completed: false)).where(product_id: params[:id]).first)
-    redirect_to :back
-  end
-
   def update
+    authenticate_user!
     old_quantity = ProductOrder.find(params[:id]).quantity
     if params[:specify] == "remove"
       new_quantity = old_quantity - 1

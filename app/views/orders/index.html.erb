@@ -1,0 +1,10 @@
+<h2><%= "#{User.find(session[:user_id]).name}'s Orders" %></h2>
+<ol>
+<% @orders.each do |order| %>
+  <li>Order Id: <%= order.id %>
+  | Completed: <%= order.completed %>
+  | Items: <ul> <% order.products.each do |product| %>
+      <li><%= product.name %> </li>
+  <% end %> </ul>
+<% end %>
+</ol>

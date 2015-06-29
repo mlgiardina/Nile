@@ -5,6 +5,7 @@ var LoggedInNavigation = React.createClass({
                  <Home url='/' />
                  <Search />
                  <Cart url='/product_orders' />
+                 <Orders url='/orders' />
                  <Logout url='/logout/' />
             </nav>
         );
@@ -55,6 +56,17 @@ var Cart = React.createClass({
         );
     },
 
+    clicked: function () {
+        window.location.href= this.props.url;
+    }
+});
+
+var Orders = React.createClass({
+    render: function () {
+        return (
+            <span onClick={this.clicked} className = 'btn btn-default'>Orders</span>
+        );
+    },
     clicked: function () {
         window.location.href= this.props.url;
     }
