@@ -25,12 +25,12 @@ var ProductsIndex = React.createClass({
     prev: function () {
         $.getJSON('/products?page=' + (this.state.page - 1), function (data) {
             this.setState({products: data, page: this.state.page - 1 });
-        }.bind(this))
+        }.bind(this));
     },
     next: function () {
         $.getJSON('/products?page=' + (this.state.page + 1), function (data) {
             this.setState({products: data, page: this.state.page + 1});
-        }.bind(this))
+        }.bind(this));
     },
     navButtons: function () {
         return (
