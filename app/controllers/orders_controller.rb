@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
     @orders = user.orders
     order = Order.find(params[:id])
     order.update(completed: params[:completed])
-    CompleteOrderMailer.order_confirmation(user)
+    CompleteOrderMailer.order_confirmation(user).deliver_now
     flash[:notice] = "Order Submitted!"
     render 'index'
   end
