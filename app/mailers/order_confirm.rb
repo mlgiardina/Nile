@@ -1,4 +1,4 @@
-class OrderConfirm < ApplicationMailer
+  class OrderConfirm < ApplicationMailer
   def order_confirmation(user)
     @user = user
 
