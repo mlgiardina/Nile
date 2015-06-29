@@ -1,5 +1,3 @@
-'use strict';
-
 var ProductsIndex = React.createClass({
     getInitialState: function () {
         return { page: 0, products: this.props.products, order_id: this.props.order_id };

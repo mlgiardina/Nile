@@ -33,7 +33,7 @@ var Product = React.createClass({
         }
     },
 
-    added: function (event) {
+    added: function () {
         console.log("clicked");
         $.post('/product_orders', {product_id: this.props.id, order_id: this.props.order_id, quantity: 1});
         this.setState({inCart: true});
