@@ -5,10 +5,12 @@ class OrdersController < ApplicationController
   end
 
   def update
-    @orders = User.find(session[:user_id]).orders
     authenticate_user!
+    user = User.find(session[:user_id])
+    @orders = user.orders
     order = Order.find(params[:id])
     order.update(completed: params[:completed])
+    OrderConfirm.order_confirmation(user)
     flash[:notice] = "Order Submitted!"
     render 'index'
   end
