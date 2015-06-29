@@ -17,4 +17,16 @@ class OrdersController < ApplicationController
     authenticate_user!
     @orders = User.find(session[:user_id]).orders
   end
+
+  def admin
+    user = User.find(session[:user_id])
+    if user.admin == false
+      flash[:alert] = "You are not an admin."
+      render 'index'
+    else
+      @users = User.all
+      render 'admin'
+    end
+  end
+
 end

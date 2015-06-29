@@ -1,4 +1,4 @@
-<h2><%= "#{User.find(session[:user_id]).name}'s Orders" %></h2>
+<h2><%= "#{User.find(session[:user_id]).name.capitalize}'s Order History" %></h2>
 <ol>
 <% @orders.each do |order| %>
   <li>Order Id: <%= order.id %>

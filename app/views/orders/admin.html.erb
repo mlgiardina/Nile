@@ -1,0 +1,16 @@
+<h2>All Orders</h2>
+<% @users.each do |user| %>
+  <%= user.name.capitalize %>'s Orders:
+    <ol>
+    <% user.orders.each do |order| %>
+          <li>Order ID: <%= order.id %> | Completed: <%= order.completed %>
+            <p>Items:<ul>
+            <% order.products.each do |item| %>
+              <li> <%= item.name %>
+            <% end %>
+              </li>
+            </ul></p>
+          </li>
+    <% end %>
+    </ol>
+<% end %>
