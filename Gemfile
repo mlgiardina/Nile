@@ -20,7 +20,6 @@ group :development, :test do
 end
 
 gem 'puma'
-gem 'figaro'
 group :production do
   gem 'rails_12factor'
 end
@@ -35,3 +34,4 @@ gem 'react-rails'
 gem 'bcrypt'
 gem 'mandrill_dm'
 gem 'faker'
+gem 'figaro'
